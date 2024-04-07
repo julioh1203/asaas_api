@@ -1,0 +1,56 @@
+[project]
+name = "asaas_api"
+version = "0.0.1"
+
+requires-python = ">=3.10"
+authors = [
+  {name = "Julio Henrique de Oliveira", email = "julio@octaltecnologia.com.br"}
+]
+maintainers = [
+    {name = "Julio Henrique de Oliveira", email = "julio@octaltecnologia.com.br"}
+]
+description = "API para integração com o Asaas"
+readme = "README.md"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-order",
+    "black",
+    "flake8",
+	"ipdb",
+	"ipython",
+	"pyright",
+	"isort",
+]
+
+[tool.setuptools_scm]
+write_to = "VERSION.txt"
+
+[tool.black]
+color = true
+line-length = 120
+target-version = ['py310', 'py311', 'py312']
+skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+# temporarily ignore some files
+# exclude = 'foo/(zaz|bar)\.py'
+python_version = '3.12'
+show_error_codes = true
+follow_imports = 'silent'
+strict_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_any_generics = true
+check_untyped_defs = true
+no_implicit_reexport = true
+warn_unused_configs = true
+disallow_subclassing_any = true
+disallow_incomplete_defs = true
+disallow_untyped_decorators = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
