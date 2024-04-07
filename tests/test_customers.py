@@ -1,11 +1,5 @@
-import os
-
-from asaas import AsaasCustomer
-
-
-def test_get_customer_by_cpf_cnpj(load_env_vars):
+def test_get_customer_by_cpf_cnpj(asaas_customer_instance):
     """Test Get Customer by CPF/CNPJ"""
-
-    asaas = AsaasCustomer(load_env_vars.get("api_token"), load_env_vars.get("api_url"))
-    response = asaas.get_customer_by_cpf_cnpj("12345678901")
+    asaas = asaas_customer_instance
+    response = asaas.get_customer("cpfCnpj", "12345678901")
     assert response.status_code == 200
