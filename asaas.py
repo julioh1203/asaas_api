@@ -1,3 +1,6 @@
+import httpx
+
+
 class Asaas:
     """Asaas Class"""
 
@@ -13,3 +16,19 @@ class Asaas:
     def get_json(self, response):
         """Get JSON from response"""
         return response.json()
+
+    def act_post_put(self, method, url, payload=None):
+        """Act POST or PUT"""
+        if method == "POST":
+            response = httpx.post(url, headers=self.headers, json=payload)
+        elif method == "PUT":
+            response = httpx.put(url, headers=self.headers, json=payload)
+        return response
+
+    def act_get_delete(self, method, url):
+        """Act GET or DELETE"""
+        if method == "GET":
+            response = httpx.get(url, headers=self.headers)
+        elif method == "DELETE":
+            response = httpx.delete(url, headers=self.headers)
+        return response
