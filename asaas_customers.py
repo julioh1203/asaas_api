@@ -1,5 +1,3 @@
-import httpx
-
 from asaas import Asaas
 
 
@@ -31,12 +29,12 @@ class AsaasCustomer(Asaas):
         url = self.api_url + f"/customers/{customer_id}"
         return self.act_get_delete("DELETE", url)
 
-    def recover_customer(self, customer_id):
+    def restore_customer(self, customer_id):
         """Recover Customer"""
         url = self.api_url + f"/customers/{customer_id}/restore"
         return self.act_post_put("POST", url)
 
-    def recover_customer_notifications(self, customer_id):
+    def restore_customer_notifications(self, customer_id):
         """Recover Customer Notifications"""
         url = self.api_url + f"/customers/{customer_id}/notifications"
         return self.act_get_delete("GET", url)

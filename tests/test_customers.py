@@ -67,16 +67,16 @@ def test_delete_customer(asaas_customer_instance):
 
 
 @pytest.mark.order(6)
-def test_recover_customer(asaas_customer_instance):
+def test_restore_customer(asaas_customer_instance):
     """Test Recover Customer"""
     asaas = asaas_customer_instance
-    response = asaas.recover_customer("cus_000005958001")
+    response = asaas.restore_customer("cus_000005958001")
     assert response.status_code == 200
 
 
 @pytest.mark.order(7)
-def test_recover_customer_notifications(asaas_customer_instance):
+def test_restore_customer_notifications(asaas_customer_instance):
     """Test Recover Customer Notifications"""
     asaas = asaas_customer_instance
-    response = asaas.recover_customer_notifications("cus_000005958001")
+    response = asaas.restore_customer_notifications("cus_000005958001")
     assert response.status_code == 200
