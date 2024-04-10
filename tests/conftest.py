@@ -4,6 +4,7 @@ import pytest
 
 from asaas_charging import AsaasCharging
 from asaas_customers import AsaasCustomer
+from asaas_subscription import AsaasSubscription
 
 
 @pytest.fixture(scope="session")
@@ -23,4 +24,12 @@ def asaas_customer_instance(load_env_vars):
 @pytest.fixture
 def asaas_charging_instance(load_env_vars):
     asaas = AsaasCharging(load_env_vars.get("api_token"), load_env_vars.get("api_url"))
+    return asaas
+
+
+@pytest.fixture()
+def asaas_subscription_instance(load_env_vars):
+    asaas = AsaasSubscription(
+        load_env_vars.get("api_token"), load_env_vars.get("api_url")
+    )
     return asaas
