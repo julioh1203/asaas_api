@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import pytest
 
 
@@ -10,7 +12,7 @@ def test_create_charging(asaas_charging_instance):
         "fine": {"value": 2, "type": "PERCENTAGE"},
         "customer": "cus_000005958001",
         "value": 100,
-        "dueDate": "2024-06-30",
+        "dueDate": datetime.now().strftime("%Y-%m-%d"),
         "description": "Pedido 200",
         "installmentCount": 2,
         "totalValue": 100,
@@ -26,11 +28,11 @@ def test_update_charging(asaas_charging_instance, test_create_charging):
     """Test Get Charging"""
     payload = {
         "billingType": "BOLETO",
-        "interest": {"value": 1},
-        "fine": {"value": 2, "type": "PERCENTAGE"},
+        # "interest": {"value": 1},
+        # "fine": {"value": 2, "type": "PERCENTAGE"},
         "customer": "cus_000005958001",
         "value": 300,
-        "dueDate": "2024-06-30",
+        # "dueDate": "2024-06-30",
         "description": "Pedido 200",
         "installmentCount": 2,
         "totalValue": 300,
@@ -69,11 +71,11 @@ def test_refund_charging(asaas_charging_instance):
     asaas = asaas_charging_instance
     payload_create_charging = {
         "billingType": "PIX",
-        "interest": {"value": 1},
-        "fine": {"value": 2, "type": "PERCENTAGE"},
+        # "interest": {"value": 1},
+        # "fine": {"value": 2, "type": "PERCENTAGE"},
         "customer": "cus_000005958001",
         "value": 100,
-        "dueDate": "2024-06-30",
+        "dueDate": datetime.now().strftime("%Y-%m-%d"),
         "description": "Pedido 200",
         "installmentCount": 1,
         "totalValue": 100,
@@ -105,7 +107,7 @@ def test_get_pix_qr_code(asaas_charging_instance):
         "fine": {"value": 2, "type": "PERCENTAGE"},
         "customer": "cus_000005958001",
         "value": 100,
-        "dueDate": "2024-06-30",
+        "dueDate": datetime.now().strftime("%Y-%m-%d"),
         "description": "Pedido 200",
         "installmentCount": 1,
         "totalValue": 100,
