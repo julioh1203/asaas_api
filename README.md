@@ -78,3 +78,22 @@ asaas_customers = AsaasCustomer(api_key, api_url)
 response = asaas_customers.get_customer('cpf', '12345678901')
 print(response.json()) 
 ```
+
+### Testing
+Before running the tests, make sure you have installed the required dependencies and the pytest.ini exists in the root of the project:
+
+```pytest.ini
+[pytest]
+env =
+    ASAAS_API_KEY=your_api_key
+    ASAAS_API_URL=the_Asaas_api_url
+```
+
+To run the tests, use the following command:
+
+```sh
+pytest
+```
+
+Before running the test_subscriptions.py file, make sure you have created a customer and a subscription in the Asaas API. You can use the test_customers.py file to create a customer.
+
