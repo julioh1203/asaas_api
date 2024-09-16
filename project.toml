@@ -2,7 +2,7 @@
 name = "asaas_api"
 version = "0.0.1"
 
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 authors = [
   {name = "Julio Henrique de Oliveira", email = "julio@octaltecnologia.com.br"}
 ]
@@ -37,8 +37,6 @@ skip-string-normalization = true
 profile = "black"
 
 [tool.mypy]
-# temporarily ignore some files
-# exclude = 'foo/(zaz|bar)\.py'
 python_version = '3.12'
 show_error_codes = true
 follow_imports = 'silent'

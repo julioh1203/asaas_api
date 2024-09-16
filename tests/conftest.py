@@ -17,19 +17,17 @@ def load_env_vars():
 
 @pytest.fixture
 def asaas_customer_instance(load_env_vars):
-    asaas = AsaasCustomer(load_env_vars.get("api_token"), load_env_vars.get("api_url"))
+    asaas = AsaasCustomer()
     return asaas
 
 
 @pytest.fixture
 def asaas_charging_instance(load_env_vars):
-    asaas = AsaasCharging(load_env_vars.get("api_token"), load_env_vars.get("api_url"))
+    asaas = AsaasCharging()
     return asaas
 
 
-@pytest.fixture()
+@pytest.fixture
 def asaas_subscription_instance(load_env_vars):
-    asaas = AsaasSubscription(
-        load_env_vars.get("api_token"), load_env_vars.get("api_url")
-    )
+    asaas = AsaasSubscription()
     return asaas

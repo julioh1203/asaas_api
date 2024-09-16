@@ -1,7 +1,7 @@
 def test_create_subscription(asaas_subscription_instance):
     """Test Create Subscription"""
     payload = {
-        "customer": "cus_000005958001",
+        "customer": "cus_000006210572",
         "billingType": "BOLETO",
         "installmentCount": 2,
         "cycle": "MONTHLY",
@@ -39,7 +39,7 @@ def test_update_subscription(asaas_subscription_instance):
     asaas = asaas_subscription_instance
     subscription_id = test_create_subscription(asaas)
     payload = {
-        "customer": "cus_000005958001",
+        "customer": "cus_000006210572",
         "billingType": "CREDIT_CARD",
         "installmentCount": 3,
         "cycle": "MONTHLY",

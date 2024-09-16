@@ -1,0 +1,13 @@
+anyio
+certifi
+h11
+httpcore
+httpx
+idna
+iniconfig
+packaging
+pluggy
+pytest
+pytest-env
+python-dotenv
+sniffio
